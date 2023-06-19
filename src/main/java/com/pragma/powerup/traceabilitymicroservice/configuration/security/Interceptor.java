@@ -65,7 +65,7 @@ public class Interceptor implements HandlerInterceptor {
 
     private boolean isAllowedClientEndpoint(String requestURI) {
 
-        if(requestURI.startsWith("/restaurant/allRestaurants")){
+        if(requestURI.startsWith("/traceability/traceability")){
             return true;
         }
         return false;

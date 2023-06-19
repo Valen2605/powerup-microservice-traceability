@@ -16,6 +16,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -24,7 +25,7 @@ import java.util.Map;
 @SecurityRequirement(name = "jwt")
 public class TraceabilityRestController {
 
-    private final ITraceabilityHandler categoryHandler;
+    private final ITraceabilityHandler traceabilityHandler;
 
     @Operation(summary = "Add a new Traceability",
             responses = {
@@ -35,8 +36,21 @@ public class TraceabilityRestController {
             })
     @PostMapping("/createTraceability")
     public ResponseEntity<Map<String, String>> saveTraceability(@Valid @RequestBody TraceabilityDto traceabilityDto){
-        categoryHandler.saveTraceability(traceabilityDto);
+        traceabilityHandler.saveTraceability(traceabilityDto);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(Collections.singletonMap(Constants.RESPONSE_MESSAGE_KEY, Constants.TRACEABILITY_CREATED_MESSAGE));
+    }
+
+    @Operation(summary = "Get Traceability",
+            responses = {
+                    @ApiResponse(responseCode = "201", description = "Info Traceability",
+                            content = @Content(mediaType = "application/json", schema = @Schema(ref = "#/components/schemas/Map"))),
+                    @ApiResponse(responseCode = "404", description = "Traceability not found ",
+                            content = @Content(mediaType = "application/json", schema = @Schema(ref = "#/components/schemas/Error"))),
+            })
+    @GetMapping("/traceability")
+    public ResponseEntity<List<TraceabilityDto>> getTraceability(@RequestParam String idClient) {
+
+        return ResponseEntity.ok(traceabilityHandler.getTraceability(idClient));
     }
 }

@@ -4,7 +4,7 @@ import com.pragma.powerup.traceabilitymicroservice.domain.api.ITraceabilityServi
 import com.pragma.powerup.traceabilitymicroservice.domain.model.Traceability;
 import com.pragma.powerup.traceabilitymicroservice.domain.spi.ITraceabilityPersistencePort;
 
-import java.time.LocalDateTime;
+import java.util.List;
 
 
 public class TraceabilityUseCase implements ITraceabilityServicePort {
@@ -18,5 +18,10 @@ public class TraceabilityUseCase implements ITraceabilityServicePort {
     @Override
     public void saveTraceability(Traceability traceability) {
         traceabilityPersistencePort.saveTraceability(traceability);
+    }
+
+    @Override
+    public List<Traceability> getTraceability(String idClient) {
+        return traceabilityPersistencePort.getTraceability(idClient);
     }
 }

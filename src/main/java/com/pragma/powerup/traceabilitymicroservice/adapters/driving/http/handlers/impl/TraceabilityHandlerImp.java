@@ -7,6 +7,8 @@ import com.pragma.powerup.traceabilitymicroservice.domain.api.ITraceabilityServi
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 @RequiredArgsConstructor
@@ -18,5 +20,10 @@ public class TraceabilityHandlerImp implements ITraceabilityHandler {
     @Override
     public void saveTraceability(TraceabilityDto traceabilityDto) {
         traceabilityServicePort.saveTraceability(traceabilityRequestMapper.toTraceability(traceabilityDto));
+    }
+
+    @Override
+    public List<TraceabilityDto> getTraceability(String idClient) {
+        return traceabilityRequestMapper.toTraceabilityDtoList(traceabilityServicePort.getTraceability(idClient));
     }
 }
