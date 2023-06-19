@@ -1,0 +1,24 @@
+server:
+  port: 8093
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/traceability
+      database: traceability
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+my:
+  variables:
+    owner: "ROLE_OWNER"
+    client: "ROLE_CUSTOMER"
+
+
+
+
+
