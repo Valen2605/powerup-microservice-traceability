@@ -17,6 +17,7 @@ my:
   variables:
     owner: "ROLE_OWNER"
     client: "ROLE_CUSTOMER"
+    employee: "ROLE_EMPLOYEE"
 
 
 
