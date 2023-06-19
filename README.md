@@ -36,21 +36,20 @@ To get a local copy up and running follow these steps.
 ### Installation
 
 1. Clone the repository
-2. Create a new database in MySQL called square
-3. Update the database connection settings
+2. Update the database connection settings
    ```yml
    # src/main/resources/application-dev.yml
    spring:
-      datasource:
-          url: jdbc:mysql://localhost/square
-          username: root
-          password: <your-password>
+     data:
+     mongodb:
+       uri: mongodb://localhost:27017/traceability
+       database: traceability
    ```
 <!-- USAGE -->
 ## Usage
 
 1. Right-click the class PowerUpApplication and choose Run
-2. Open [http://localhost:8091/swagger-ui/index.html](http://localhost:8090/swagger-ui/index.html) in your web browser
+2. Open [http://localhost:8093/swagger-ui/index.html](http://localhost:8090/swagger-ui/index.html) in your web browser
 
 <!-- ROADMAP -->
 ## Tests
@@ -75,88 +74,10 @@ the domain layer and encapsulates the business logic and rules.
 
 ## Entry Points
 
-### Entry point create restaurant
-![Image text](img/EntryPointCreateRestaurant.jpg)
+### Entry point Create Traceability
+![Image text](img/EntryPointCreateTraceability.jpg)
 
-### Exit point create restaurant
-![Image text](/img/ExitPointCreateRestaurant.jpg)
-
-### Entry point create dish Owner Authentication token
-![Image text](img/EntryPointCreateDishAutenticationOwner.jpg)
-
-### Exit point create dish
-![Image text](/img/ExitPointCreateDish.jpg)
-
-### Entry point update dish Owner Authentication token
-![Image text](img/EntryPointUpdateDish.jpg)
-
-### Exit point update dish
-![Image text](/img/ExitPointUpdateDish.jpg)
-
-### Entry point enable/disable dish
-![Image text](img/EntryPointEnableDisableDish.jpg)
-
-### Exit point enable/disable dish
-![Image text](/img/ExitPointEnableDisableDish.jpg)
-
-### Entry point List Restaurants
-![Image text](img/EntryPointListRestaurants.jpg)
-
-### Exit point List Restaurants
-![Image text](/img/ExitPointListRestaurants.jpg)
-
-### Entry point Add Employee To Restaurant
-![Image text](img/EntryPointAddEmployeeToRestaurant.jpg)
-
-### Exit point Add Employee To Restaurant
-![Image text](/img/ExitPointAddEmployeeToRestaurant.jpg)
-
-### Entry point List Dishes
-![Image text](img/EntryPointListDishes.jpg)
-
-### Exit point List Dishes
-![Image text](/img/ExitPointListDishes.jpg)
-
-### Entry point Create Order
-![Image text](img/EntryPointCreateOrder.jpg)
-
-### Exit point Create Order
-![Image text](/img/ExitPointCreateOrder.jpg)
-
-### Entry point Create OrderDish
-![Image text](img/EntryPointCreateOrderDish.jpg)
-
-### Exit point Create OrderDish
-![Image text](/img/ExitPointCreateOrderDish.jpg)
-
-### Entry point List Orders
-![Image text](img/EntryPointListOrders.jpg)
-
-### Exit point List Orders
-![Image text](/img/ExitPointListOrders.jpg)
-
-### Entry point Assign an Order
-![Image text](img/EntryAssignOrder.jpg)
-
-### Exit point Assign an Order
-![Image text](/img/ExitPointAssignOrder.jpg)
-
-### Entry point Order Ready
-![Image text](img/EntryPointOrderReady.jpg)
-
-### Exit point Order Ready
-![Image text](/img/ExitPointOrderReady.jpg)
-
-### Entry point Order Delivered
-![Image text](img/EntryPointOrderDelivered.jpg)
-
-### Exit point Order Delivered
-![Image text](/img/ExitPointOrderDelivered.jpg)
-
-### Entry point Order Canceled
-![Image text](img/EntryPointOrderCanceled.jpg)
-
-### Exit point Order Delivered
+### Exit point Create Traceability
 ![Image text](/img/ExitPointOrderCanceled.jpg)
 
 
