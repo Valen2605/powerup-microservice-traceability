@@ -49,7 +49,6 @@ public class Interceptor implements HandlerInterceptor {
         if (owner.equals(roleUser) && isAllowedOwnerEndpoint(request.getRequestURI())) {
             return true;
         }
-
         if (client.equals(roleUser) && isAllowedClientEndpoint(request.getRequestURI())) {
             return true;
         }
@@ -64,7 +63,7 @@ public class Interceptor implements HandlerInterceptor {
 
      private boolean isAllowedOwnerEndpoint(String requestURI) {
 
-        if (requestURI.startsWith("/traceability/createTraceability")) {
+        if (requestURI.contains("/traceability/createTraceability")) {
             return true;
         }
         return false;
@@ -72,7 +71,7 @@ public class Interceptor implements HandlerInterceptor {
 
     private boolean isAllowedClientEndpoint(String requestURI) {
 
-        if(requestURI.startsWith("/traceability/traceability")){
+        if(requestURI.contains("/traceability/traceability")){
             return true;
         }
 
@@ -81,7 +80,7 @@ public class Interceptor implements HandlerInterceptor {
 
     private boolean isAllowedEmployeeEndpoint(String requestURI) {
 
-        if (requestURI.startsWith("/traceability/createTraceability")) {
+        if (requestURI.contains("/traceability/createTraceability")) {
             return true;
         }
         return false;

@@ -19,20 +19,14 @@ import java.time.LocalDateTime;
 @Schema(description = "TraceabilityDto")
 public class TraceabilityDto {
 
-    @NotEmpty(message = "The idOrder must not be empty")
+
     private String idOrder;
-    @NotEmpty(message = "The idClient must not be empty")
     private String idClient;
-    @NotEmpty(message = "The email client must not be empty")
     private String emailClient;
     @JsonIgnore
     private LocalDateTime date;
-    @NotEmpty(message = "The previous status must not be empty")
     private String previousStatus;
-    @NotEmpty(message = "The new status must not be empty")
     private String newStatus;
-    @NotEmpty(message = "The idEmployee must not be empty")
     private String idEmployee;
-    @NotEmpty(message = "The email employee must not be empty")
     private String emailEmployee;
 }
