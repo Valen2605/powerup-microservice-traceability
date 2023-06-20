@@ -75,6 +75,10 @@ public class Interceptor implements HandlerInterceptor {
             return true;
         }
 
+        if (requestURI.contains("/traceability/createTraceability")) {
+            return true;
+        }
+
         return false;
     }
 
