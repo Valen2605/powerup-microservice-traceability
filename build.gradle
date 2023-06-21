@@ -51,7 +51,21 @@ jacocoTestReport {
 	afterEvaluate {
 		classDirectories.setFrom(files(classDirectories.files.collect {
 			fileTree(dir: it, exclude: ['com/pragma/powerup/squaremicroservice/configuration',
-			                            'com/pragma/powerup/squaremicroservice/domain/utility'])
+										'com/pragma/powerup/squaremicroservice/domain/utility',
+										'com/pragma/powerup/traceabilitymicroservice/adapters/driven/mongo/mappers',
+										'com/pragma/powerup/traceabilitymicroservice/adapters/driving/http/mapper',
+										'com/pragma/powerup/traceabilitymicroservice/configuration/security',
+										'com/pragma/powerup/traceabilitymicroservice/adapters/driven/mongo/entity',
+										'com/pragma/powerup/traceabilitymicroservice/adapters/driving/http/dto',
+										'com/pragma/powerup/traceabilitymicroservice/configuration',
+										'com/pragma/powerup/traceabilitymicroservice/domain/model',
+										'com/pragma/powerup/traceabilitymicroservice/domain/utility',
+										'com/pragma/powerup/traceabilitymicroservice/adapters/driven/mongo/adapter',
+										'com/pragma/powerup/traceabilitymicroservice/adapters/driving/http/controller',
+										'com/pragma/powerup/traceabilitymicroservice/adapters/driving/http/handlers/impl',
+										'com/pragma/powerup/traceabilitymicroservice/configuration/security/exception',
+										'com/pragma/powerup/traceabilitymicroservice/adapters/driven/mongo/entity'
+			                            ])
 		}))
 	}
 }
